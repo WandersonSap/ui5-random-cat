@@ -1,11 +1,39 @@
-<mvc:View controllerName="ovly.random-cat.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-	<Shell id="shell">
-		<App id="app">
-			<pages>
-				<Page id="page" title="{i18n>title}">
-					<content></content>
-				</Page>
-			</pages>
-		</App>
-	</Shell>
+<mvc:View 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:s="sap.m.semantic"
+xmlns="sap.m" 
+controllerName="ovly.random-cat.controller.View1" 
+displayBlock="true">
+	<Shell id="shell">	
+		<SplitContainer id="app">
+			<masterPages>
+				<s:MasterPage title="Radm Cats">
+					<s:content>
+						<List id="listCat" includeItemInSelection="false">
+							<items>
+								
+							</items>
+						</List>
+						
+					</s:content>
+					<s:customFooterContent>
+						<Button icon="sap-icon://delete" press="onEmpty"/>
+					</s:customFooterContent>
+					<s:addAction>
+						<s:AddAction press="onAdd" />
+					</s:addAction>
+				</s:MasterPage>
+			</masterPages>
+			
+			<detailPages>
+				<s:DetailPage  id="detail-page" title="" showFooter="false">
+					<s:content>
+						<HBox justifyContent="Center">
+							<Image id="cat-image" width="300px" src=""/>
+						</HBox>
+					</s:content>
+				</s:DetailPage>
+			</detailPages>
+		</SplitContainer>
+	</Shell>	
 </mvc:View>
